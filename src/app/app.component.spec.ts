@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'artwork-demo-ang-universal'`, () => {
+  it(`should have as title 'ang-universal-demo'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('artwork-demo-ang-universal');
+    expect(app.title).toEqual('ang-universal-demo');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('artwork-demo-ang-universal app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('ang-universal-demo app is running!');
   });
 });

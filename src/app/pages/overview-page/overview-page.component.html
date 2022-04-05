@@ -1,0 +1,5 @@
+<div *ngIf="artworks$ | async as artworks" class="artworks-container">
+    <a *ngFor="let artwork of artworks" [routerLink]="artwork.id">
+    <artwork-tile [artwork]="artwork"></artwork-tile>
+    </a>
+</div>

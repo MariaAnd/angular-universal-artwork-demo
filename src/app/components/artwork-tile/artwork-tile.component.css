@@ -1,0 +1,14 @@
+.artwork-wrapper{
+    margin-bottom: 40px;
+    max-width: 600px
+}
+
+.description{
+    padding-left: 10px;
+    border-left: 5px solid lightgrey;
+}
+
+h2, p{
+    margin: 0;
+    padding: 0;
+}

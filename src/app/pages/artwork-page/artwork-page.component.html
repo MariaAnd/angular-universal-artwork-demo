@@ -1,0 +1,8 @@
+<div *ngIf="artwork$ | async as artwork">
+    <h1>{{artwork.title}}</h1>
+    <p *ngIf="artwork.medium_display"><span>{{artwork.medium_display}}</span></p>
+    <image [imageId]="artwork.image_id"></image>
+    <p *ngIf="artwork.artist_display"><span class="bold">Artist: </span><span>{{artwork.artist_display}}</span></p>
+    <p *ngIf="artwork.place_of_origin"><span class="bold">Place of origin: </span><span>{{artwork.place_of_origin}}</span></p>
+    <p *ngIf="artwork.exhibition_history"><span class="bold">Exhibition history: </span><span>{{artwork.exhibition_history}}</span></p>
+</div>
