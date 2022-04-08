@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserStateInterceptor } from './interceptors/browser-state.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,9 +22,15 @@ import { ArtworkPageComponent } from './pages/artwork-page/artwork-page.componen
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
+    BrowserTransferStateModule,
     AppRoutingModule
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: BrowserStateInterceptor,
+      multi: true
+    },
   ],
   bootstrap: [AppComponent]
 })
