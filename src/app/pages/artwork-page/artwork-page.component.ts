@@ -17,6 +17,7 @@ export class ArtworkPageComponent implements OnInit, OnDestroy {
 
     artwork$ !: Observable<any>
     artworkSubscription!: Subscription;
+    artworkUrl!: string;
 
     ngOnInit() {
         this.artwork$ = this.artworksService.getArtworkDetails(this.router.url).pipe(share());

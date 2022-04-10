@@ -26,7 +26,6 @@ export class ArtworksService {
     }
 
     getArtworkDetails(id: string) {
-        console.log(`${this.artworksUrl}${id}`)
         return this.httpsService.getRequest(`${this.artworksUrl}${id}`).pipe(
             map(result => this.successHandler(result))
         );

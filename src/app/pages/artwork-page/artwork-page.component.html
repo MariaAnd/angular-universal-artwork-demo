@@ -1,4 +1,5 @@
 <div *ngIf="artwork$ | async as artwork">
+    <back-button></back-button>
     <h1>{{artwork.title}}</h1>
     <p *ngIf="artwork.medium_display"><span>{{artwork.medium_display}}</span></p>
     <image [imageId]="artwork.image_id"></image>
@@ -7,4 +8,5 @@
     <p *ngIf="artwork.dimensions"><span class="bold">Dimensions: </span><span>{{artwork.dimensions}}</span></p>
     <p *ngIf="artwork.credit_line"><span class="bold">Credit line: </span><span>{{artwork.credit_line}}</span></p>
     <p *ngIf="artwork.exhibition_history"><span class="bold">Exhibition history: </span><span>{{artwork.exhibition_history}}</span></p>
+    <share-button *appShellNoRender></share-button>
 </div>
